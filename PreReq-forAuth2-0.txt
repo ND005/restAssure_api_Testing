@@ -1,0 +1,10 @@
+Auth 2.0 dependencies and Pre-reqisites
+Autharization server End point:- https://rahulshettyacademy.com/oauthapi/oauth2/resourcesOwner/token
+
+Client_id:-692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com
+Client_secret:-erZOWM9g3UtwNRj340YYaK_W
+Client_type:-client_credentials
+scope:-trust
+
+GetCourse details Endpoint (With the help of Token):- https://rahulshettyacademy.com/oauthapi/getCourseDetails
+Query Parameter :- access_token
