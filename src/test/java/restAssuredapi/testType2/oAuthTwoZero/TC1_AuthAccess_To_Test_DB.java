@@ -12,6 +12,7 @@ public class TC1_AuthAccess_To_Test_DB {
 	// NOTE:- Step 1 execution is mandatory to execute Step 2, So Don't Skip Step 1.
 	auth2Dependencies AuthDep = new auth2Dependencies();
 	private String Token = "";
+	private String coursesResut = null;
 
 	@Test
 	public void TC01_Step1_GenerateToken() {
@@ -34,6 +35,14 @@ public class TC1_AuthAccess_To_Test_DB {
 		String Rep = given().log().all().queryParam("access_token", Token).when().log().all()
 				.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").then().extract().asString();
 		System.out.println(" [INFO]:::DATA SERVICE:::DONE:");
-		System.out.println(" [INFO]:::" + Rep);
+		coursesResut = Rep;
+	}
+
+	@Test
+	public void TC01_Step3_Verify_Data_In_API_List() {
+		String DataList = coursesResut;
+		System.out.println(" [INFO]:::DATA VALIDATION:::STARTED");
+		System.out.println(" [INFO]:::DATA VALIDATION:::INPUT DATA : " + DataList);
+		
 	}
 }
