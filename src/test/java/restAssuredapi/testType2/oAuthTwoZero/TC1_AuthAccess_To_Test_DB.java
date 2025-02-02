@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
 import restAssuredapi.testType2.oAuthDependencies.auth2Dependencies;
+import restAssuredapi.testType2.oAuthDependencies.fileConverter;
 
 public class TC1_AuthAccess_To_Test_DB {
 	// This is the process of verify the data through OAuth2.0 Authentication
@@ -11,6 +12,7 @@ public class TC1_AuthAccess_To_Test_DB {
 	// Step 2:- To Get the data using Token Generated through Step 1.
 	// NOTE:- Step 1 execution is mandatory to execute Step 2, So Don't Skip Step 1.
 	auth2Dependencies AuthDep = new auth2Dependencies();
+	fileConverter Converter = new fileConverter();
 	private String Token = "";
 	private String coursesResut = null;
 
@@ -36,6 +38,10 @@ public class TC1_AuthAccess_To_Test_DB {
 				.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").then().extract().asString();
 		System.out.println(" [INFO]:::DATA SERVICE:::DONE:");
 		coursesResut = Rep;
+		// Please provide exact path.
+		Converter.ConvertStringToFile(
+				"C:\\Users\\nimma\\OneDrive\\Documents\\gitDevelopmentTesting\\restAssure_api_Testing\\coursesValues.JSON",
+				Rep);
 	}
 
 	@Test
@@ -43,6 +49,5 @@ public class TC1_AuthAccess_To_Test_DB {
 		String DataList = coursesResut;
 		System.out.println(" [INFO]:::DATA VALIDATION:::STARTED");
 		System.out.println(" [INFO]:::DATA VALIDATION:::INPUT DATA : " + DataList);
-		
 	}
 }
