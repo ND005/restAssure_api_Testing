@@ -1,5 +1,6 @@
 package restAssuredapi.testType2.oAuthTwoZero;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
@@ -31,14 +32,13 @@ public class TC1_AuthAccess_To_Test_DB {
 		String processType = JSON.getString("scope");
 		System.out.println(" [INFO]:::TOKEN SERVICE:::TOKEN:" + Token);
 		System.out.println(" [INFO]:::TOKEN PROCESS:::PROCESS TYPE:" + processType);
-
+		Assert.assertTrue(Token != null);
 	}
 
 	@Test
 	public void TC01_Step2_Verify_CoursesDB() {
 		System.out.println(" [INFO]:::DATA SERVICE:::STARTED");
 		try {
-
 			Info = given().queryParam("access_token", Token).when()
 					.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(listedData.class);
 			Thread.sleep(1000);
@@ -53,5 +53,31 @@ public class TC1_AuthAccess_To_Test_DB {
 		System.out.println(" [INFO]:::DESERIALIZATION:::STARTED:");
 		System.out.println(" [INFO]:::INSTRUCTER:" + Info.getInstructor());
 		System.out.println(" [INFO]:::URL:" + Info.getUrl());
+		System.out.println(
+				" [INFO]:::Number of course in Web Automation :" + Info.getCourses().getWebAutomation().size());
+		int TotalWebAutomationCost = 0;
+		int TotalAPIAutomationCost = 0;
+		for (int Count = 0; Count < Info.getCourses().getWebAutomation().size(); Count++) {
+			/*
+			 * System.out.println(" [INFO]:::" + Count +
+			 * " position value web automation course is " +
+			 * Info.getCourses().getWebAutomation().get(Count).getCourseTitle() +
+			 * " & it's cost is " +
+			 * Info.getCourses().getWebAutomation().get(Count).getPrice());
+			 */
+			TotalWebAutomationCost = Info.getCourses().getWebAutomation().get(Count).getPrice()
+					+ TotalWebAutomationCost;
+		}
+		System.out.println(" [INFO]:::Total web automation course price :" + TotalWebAutomationCost);
+		for (int Count = 0; Count < Info.getCourses().getApi().size(); Count++) {
+			/*
+			 * System.out.println(" [INFO]:::" + Count + " position value api course is" +
+			 * Info.getCourses().getApi().get(Count).getCourseTitle() + " & its cost is " +
+			 * Info.getCourses().getApi().get(Count).getPrice());
+			 */
+			TotalAPIAutomationCost = Info.getCourses().getApi().get(Count).getPrice() + TotalAPIAutomationCost;
+		}
+		System.out.println(" [INFO]:::Total API automation course price :" + TotalAPIAutomationCost);
+		Assert.assertTrue(TotalWebAutomationCost > 0 && TotalAPIAutomationCost > 0);
 	}
 }

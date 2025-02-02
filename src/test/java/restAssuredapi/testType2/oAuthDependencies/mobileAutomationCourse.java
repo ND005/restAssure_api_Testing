@@ -2,7 +2,7 @@ package restAssuredapi.testType2.oAuthDependencies;
 
 public class mobileAutomationCourse {
 	private String courseTitle;
-	private String price;
+	private int price;
 
 	public String getCourseTitle() {
 		return courseTitle;
@@ -12,11 +12,11 @@ public class mobileAutomationCourse {
 		this.courseTitle = courseTitle;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 }
