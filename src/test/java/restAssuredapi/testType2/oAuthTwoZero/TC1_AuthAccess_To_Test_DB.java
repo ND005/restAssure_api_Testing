@@ -5,16 +5,19 @@ import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
 import restAssuredapi.testType2.oAuthDependencies.auth2Dependencies;
 import restAssuredapi.testType2.oAuthDependencies.fileConverter;
+import restAssuredapi.testType2.oAuthDependencies.listedData;
 
 public class TC1_AuthAccess_To_Test_DB {
 	// This is the process of verify the data through OAuth2.0 Authentication
 	// Step 1:- To generate the Token based on credentials.
 	// Step 2:- To Get the data using Token Generated through Step 1.
 	// NOTE:- Step 1 execution is mandatory to execute Step 2, So Don't Skip Step 1.
+
+	// Step 3:- To validate the data in the file or list
 	auth2Dependencies AuthDep = new auth2Dependencies();
 	fileConverter Converter = new fileConverter();
 	private String Token = "";
-	private String coursesResut = null;
+	private listedData Info = null;
 
 	@Test
 	public void TC01_Step1_GenerateToken() {
@@ -34,20 +37,21 @@ public class TC1_AuthAccess_To_Test_DB {
 	@Test
 	public void TC01_Step2_Verify_CoursesDB() {
 		System.out.println(" [INFO]:::DATA SERVICE:::STARTED");
-		String Rep = given().log().all().queryParam("access_token", Token).when().log().all()
-				.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").then().extract().asString();
+		try {
+
+			Info = given().queryParam("access_token", Token).when()
+					.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(listedData.class);
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			System.out.println(" [INFO]:::DATA SERVICE:::EXCEPTION:" + e.toString());
+		}
 		System.out.println(" [INFO]:::DATA SERVICE:::DONE:");
-		coursesResut = Rep;
-		// Please provide exact path.
-		Converter.ConvertStringToFile(
-				"C:\\Users\\nimma\\OneDrive\\Documents\\gitDevelopmentTesting\\restAssure_api_Testing\\coursesValues.JSON",
-				Rep);
 	}
 
 	@Test
-	public void TC01_Step3_Verify_Data_In_API_List() {
-		String DataList = coursesResut;
-		System.out.println(" [INFO]:::DATA VALIDATION:::STARTED");
-		System.out.println(" [INFO]:::DATA VALIDATION:::INPUT DATA : " + DataList);
+	public void TC01_Step3_Verify_DataInNodeWise() {
+		System.out.println(" [INFO]:::DESERIALIZATION:::STARTED:");
+		System.out.println(" [INFO]:::INSTRUCTER:" + Info.getInstructor());
+		System.out.println(" [INFO]:::URL:" + Info.getUrl());
 	}
 }

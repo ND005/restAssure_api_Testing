@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-02T13:41:14 IST" name="Default suite" finished-at="2025-02-02T13:41:20 IST" duration-ms="6065">
+  <suite started-at="2025-02-02T17:49:39 IST" name="Default suite" finished-at="2025-02-02T17:49:44 IST" duration-ms="4406">
     <groups>
     </groups>
-    <test started-at="2025-02-02T13:41:14 IST" name="Default test" finished-at="2025-02-02T13:41:20 IST" duration-ms="6065">
+    <test started-at="2025-02-02T17:49:39 IST" name="Default test" finished-at="2025-02-02T17:49:44 IST" duration-ms="4406">
       <class name="restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB">
-        <test-method signature="TC01_Step1_GenerateToken()[pri:0, instance:restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB@2a798d51]" started-at="2025-02-02T13:41:14 IST" name="TC01_Step1_GenerateToken" finished-at="2025-02-02T13:41:17 IST" duration-ms="2809" status="PASS">
+        <test-method signature="TC01_Step1_GenerateToken()[pri:0, instance:restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB@515aebb0]" started-at="2025-02-02T17:49:39 IST" name="TC01_Step1_GenerateToken" finished-at="2025-02-02T17:49:43 IST" duration-ms="3052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC01_Step1_GenerateToken -->
-        <test-method signature="TC01_Step2_Verify_CoursesDB()[pri:0, instance:restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB@2a798d51]" started-at="2025-02-02T13:41:17 IST" name="TC01_Step2_Verify_CoursesDB" finished-at="2025-02-02T13:41:20 IST" duration-ms="3182" status="PASS">
+        <test-method signature="TC01_Step2_Verify_CoursesDB()[pri:0, instance:restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB@515aebb0]" started-at="2025-02-02T17:49:43 IST" name="TC01_Step2_Verify_CoursesDB" finished-at="2025-02-02T17:49:44 IST" duration-ms="1287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC01_Step2_Verify_CoursesDB -->
-        <test-method signature="TC01_Step3_Verify_Data_In_API_List()[pri:0, instance:restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB@2a798d51]" started-at="2025-02-02T13:41:20 IST" name="TC01_Step3_Verify_Data_In_API_List" finished-at="2025-02-02T13:41:20 IST" duration-ms="7" status="PASS">
+        <test-method signature="TC01_Step3_Verify_DataInNodeWise()[pri:0, instance:restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB@515aebb0]" started-at="2025-02-02T17:49:44 IST" name="TC01_Step3_Verify_DataInNodeWise" finished-at="2025-02-02T17:49:44 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC01_Step3_Verify_Data_In_API_List -->
+        </test-method> <!-- TC01_Step3_Verify_DataInNodeWise -->
       </class> <!-- restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
