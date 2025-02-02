@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB">
+      <class name="restAssureapi.testType3.serialization.TC02_googleMapsUpdate">
         <methods>
-          <include name="TC01_Step3_Verify_Data_In_API_List"/>
-          <include name="TC01_Step2_Verify_CoursesDB"/>
+          <include name="TC02_Step1_Update_MapLocation"/>
+          <include name="TC02_Step2_VerifyUpdatedData"/>
         </methods>
-      </class> <!-- restAssuredapi.testType2.oAuthTwoZero.TC1_AuthAccess_To_Test_DB -->
+      </class> <!-- restAssureapi.testType3.serialization.TC02_googleMapsUpdate -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
