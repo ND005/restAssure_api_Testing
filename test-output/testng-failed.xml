@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="restAssureapi.testType3.serialization.TC02_googleMapsUpdate">
+      <class name="restAssureapi.testType3.serialization.TC03_googleMapsUpdateSpecBuilder">
         <methods>
-          <include name="TC02_Step1_Update_MapLocation"/>
-          <include name="TC02_Step2_VerifyUpdatedData"/>
+          <include name="Test01_GoogleMapsUpdate"/>
         </methods>
-      </class> <!-- restAssureapi.testType3.serialization.TC02_googleMapsUpdate -->
+      </class> <!-- restAssureapi.testType3.serialization.TC03_googleMapsUpdateSpecBuilder -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
