@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-02T22:18:17 IST" name="Default suite" finished-at="2025-02-02T22:18:19 IST" duration-ms="2017">
+  <suite started-at="2025-02-08T14:19:26 IST" name="Default suite" finished-at="2025-02-08T14:19:28 IST" duration-ms="1783">
     <groups>
     </groups>
-    <test started-at="2025-02-02T22:18:17 IST" name="Default test" finished-at="2025-02-02T22:18:19 IST" duration-ms="2017">
-      <class name="restAssureapi.testType3.serialization.TC02_googleMapsUpdate">
-        <test-method signature="TC02_Step1_setGoogleMapsObjects()[pri:0, instance:restAssureapi.testType3.serialization.TC02_googleMapsUpdate@dd8ba08]" started-at="2025-02-02T22:18:17 IST" name="TC02_Step1_setGoogleMapsObjects" finished-at="2025-02-02T22:18:17 IST" duration-ms="10" status="PASS">
+    <test started-at="2025-02-08T14:19:26 IST" name="Default test" finished-at="2025-02-08T14:19:28 IST" duration-ms="1783">
+      <class name="restAssureapi.testType3.serialization.TC03_googleMapsUpdateSpecBuilder">
+        <test-method signature="Test01_GoogleMapsUpdate()[pri:0, instance:restAssureapi.testType3.serialization.TC03_googleMapsUpdateSpecBuilder@2a798d51]" started-at="2025-02-08T14:19:26 IST" name="Test01_GoogleMapsUpdate" finished-at="2025-02-08T14:19:28 IST" duration-ms="1750" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC02_Step1_setGoogleMapsObjects -->
-        <test-method signature="TC02_Step2_Update_MapLocation()[pri:0, instance:restAssureapi.testType3.serialization.TC02_googleMapsUpdate@dd8ba08]" started-at="2025-02-02T22:18:17 IST" name="TC02_Step2_Update_MapLocation" finished-at="2025-02-02T22:18:19 IST" duration-ms="1958" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC02_Step2_Update_MapLocation -->
-        <test-method signature="TC02_Step3_VerifyUpdatedData()[pri:0, instance:restAssureapi.testType3.serialization.TC02_googleMapsUpdate@dd8ba08]" started-at="2025-02-02T22:18:19 IST" name="TC02_Step3_VerifyUpdatedData" finished-at="2025-02-02T22:18:19 IST" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC02_Step3_VerifyUpdatedData -->
-      </class> <!-- restAssureapi.testType3.serialization.TC02_googleMapsUpdate -->
+        </test-method> <!-- Test01_GoogleMapsUpdate -->
+      </class> <!-- restAssureapi.testType3.serialization.TC03_googleMapsUpdateSpecBuilder -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
